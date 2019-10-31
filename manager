@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Simple Spotify Control
+# Just call ./manager --help
+
+CMD="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player"
+
+case "$1" in
+"playpause" )
+  ACTION="PlayPause"
+  ;;
+"next" )
+  ACTION="Next"
+  ;;
+"previous" )
+  ACTION="Previous"
+  ;;
+"stop" )
+  ACTION="Stop"
+  ;;
+"play" )
+  ACTION="Play"
+  ;;
+*)
+  echo "Usage: $0 [command]"
+  echo "  commands are: playpause, next, previous, stop, play"
+  exit 1
+  ;;
+esac
+
+$CMD.$ACTION
+exit $?
