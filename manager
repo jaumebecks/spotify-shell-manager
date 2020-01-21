@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Simple Spotify Control
+# Source: Edited from https://community.spotify.com/t5/Desktop-Linux/Linux-keyboard-shortcuts/m-p/3604137/highlight/true#M296
 # Just call ./manager --help
 
 CMD="dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player"
